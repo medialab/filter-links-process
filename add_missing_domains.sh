@@ -14,4 +14,5 @@ xan drop domains $CSVFILE                                                       
   xan explode links --singularize                                                               |
   xan map "replace(first(split(last(split(link, '://', 1)), '/', 1)), /^www./i, '')" domain     |
   xan implode link,domain --pluralize                                                           |
-  xan select "$HEADERS" > $OUTDIR/$OUTFILE
+  xan select "$HEADERS"                                                                         |
+  gzip > $OUTDIR/$OUTFILE
